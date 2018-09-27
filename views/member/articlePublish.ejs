@@ -1,0 +1,15 @@
+<%- include("../components/head") %>
+<div class="hd">文章链接</div>
+<div class="article-link relative">
+    <input type="text" placeholder="输入文章链接">
+    <i class="icon-15 clear"></i>
+</div>
+<p class="remark">备注：目前仅支持微信公众号的内容</p>
+<div class="article-path">
+    <img src="<%= app.appStaticPrefix %>/images/articlePath.png" alt="" class="img-responsive">
+</div>
+<div class="key">
+    <button class="btn btn-lg btn-block btn-yfyk"> 一键生成文章</button>
+</div>
+<p class="limit">每天仅可发布3篇</p>
+<%- include("../components/foot") %>

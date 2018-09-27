@@ -1,0 +1,16 @@
+<div class="city-picker-mask"></div>
+<div class="city-picker">
+    <ul class="province">
+        <% items && items.forEach(function(item){ %>
+        <li data-id="<%= item.id %>"><%= item.label %></li>
+        <% }) ;%>        
+    </ul>
+    <% items && items.forEach(function(item){ %>
+    <ul class="city" id="cities<%= item.id %>">
+        <% item.cities && item.cities.length && item.cities.forEach(function(city){ %>
+        <li data-id="<%= city.id %>"><%= city.label %></li>
+        <% }) ; %>        
+    </ul>
+    <% }) ;%>
+    <div class="fence"></div>
+</div>   

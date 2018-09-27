@@ -1,0 +1,27 @@
+<%- include("../components/head") %>
+<div class="gap"></div>
+<ul class="top-gap bottom-gap">
+    <li class="superfine-border-bottom-fence relative">
+        <p>标题</p>
+        <div contenteditable="true" class="edit-title"><%= data.title %></div>
+    </li>
+    <li class="source superfine-border-bottom-fence relative">
+        <p>来源</p><div class="origin"><%=  data.subTitle %></div>
+    </li>
+    <li>
+        <p>封面</p>
+        <%if(data.coverUrl){%>
+            <img src="<%=data.coverUrl %>" alt="" class="cover-img">
+        <% } else { %>
+            <img src="<%= app.appStaticPrefix %>/images/title.png" alt="" class="cover-img">
+        <% } %>
+    </li>
+</ul>
+<div class="gap"></div>
+<div class="content">
+    <%- data.content %>
+</div>
+<div class="publish">
+    <button class="btn btn-lg btn-block btn-yfyk">立即发布</button>
+</div>
+<%- include("../components/foot") %>

@@ -1,0 +1,33 @@
+<%- include("../components/head") %>
+<div class="panel-fence"></div>
+<div class="panel-legend">实名认证</div>
+<div class="panel">
+    <dl class="head-portrait padding-tb">
+        <dt class="img-circle upload-handler">            
+            <label style="background-image: url('<%= app.appStaticPrefix %>/images/headPortrait.png'); background-repeat: no-repeat; background-size: cover" class="img-responsive upload-placeholder"></label>
+        </dt>
+        <dt>点击上传头像</dt>
+        <dd>参照上图样例，用户访问率更高</dd>
+    </dl>
+    <dl class="horizontal superfine-border-top-fence"><dt>真实姓名</dt><dd><input type="text" placeholder="请输入真实姓名" class="transparent" value="" name="realname"></dd></dl>
+    <dl class="horizontal superfine-border-top-fence"><dt>身份证</dt><dd><input type="text" placeholder="请输入身份证号" class="transparent" name="idCard"></dd></dl>
+    <dl class="superfine-border-top-fence idcard">
+        <dt>上传身份证正面照</dt>
+        <dd class="upload-handler"><span class="upload-placeholder">点击上传照片</span></dd>        
+    </dl>
+</div>
+<div class="panel-fence"></div>
+<div class="panel-legend">主营区域</div>
+<div class="panel">
+    <div class="extensible relative" id="citySelector" data-value="100005,200005"><dl class="horizontal"><dt>所在城市</dt><dd></dd></dl></div>
+    <div class="extensible relative" id="townSelector" data-value="200010,200011,200012,200013"><dl class="horizontal superfine-border-top-fence"><dt>主营板块</dt><dd></dd></dl></div>
+</div>
+<div class="padding bg-gray"><a class="btn btn-yfyk btn-lg btn-block" id="submit">提交</a></div>
+<input type="hidden" name="tel" value="<%= apiData.tel %>">
+<input type="hidden" name="state" value="<%= apiData.state %>">
+<input type="hidden" name="agentId" value="<%= apiData.agentId %>">
+<input type="hidden" name="openId" value="<%= apiData.openId %>">
+<%- include("../components/cityPicker" , { "items" : apiData.provinceCityList }) %>
+<input type="hidden" id="cityId" value="200005">
+<%- include("../components/townPicker") %>
+<%- include("../components/foot") %>

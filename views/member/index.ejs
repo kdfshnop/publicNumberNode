@@ -1,0 +1,33 @@
+<%- include("../components/head") %>
+<div class="member-index">
+    <div class="user-info">
+        <div class="edit">
+            <a href="/member/profile" class="has-arrow">修改资料</a>
+        </div>
+        <div class="pic">
+            <img class="photo" src="<%=apiData.indexData.pic %>"></img>
+            <span class="icon-15 v logo"></span>
+        </div>
+        <p class="approve">V店认证</p>
+        <p class="agent-name">经纪人<%= apiData.indexData.name %></p>
+    </div>
+    <div class="my">
+        <ul class="padding-left">
+            <li class="extensible title "><a href="<%=apiData.yfykLink %>/yfyk365/wechat/share/<%= apiData.agentId %>"><i class="icon-25 v"></i>我的V店</a></li>
+            <li class="extensible title superfine-border-top-fence relative"><i class="icon-25 article"></i><a href="/member/articles">我的文章</a></li>
+            <li class="extensible title superfine-border-top-fence relative"><i class="icon-25 add-xf"></i><a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.lifang.agent">添加新房到V店</a></li>
+        </ul>
+    </div>
+    <div class="panel-legend">下载APP</div>
+    <div class="download">
+        <div class="dl-common">
+            <span class="icon-120 yfyk"></span>
+            <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.lifang.agent" class="btn btn-radius btn-yfyk-alpha btn-yfyk-reverse superfine-borders-yfyk-radius relative">立即下载APP</a>
+        </div>
+        <div class="dl-common superfine-border-top-fence relative">
+            <span class="icon-120 wkzf"></span>
+            <a href="http://android.myapp.com/myapp/detail.htm?apkName=com.wukong.ua" class="btn btn-radius btn-wkzf-alpha btn-wkzf-reverse superfine-borders-wkzf-radius relative">立即下载APP</a>
+        </div>
+    </div> 
+</div>
+<%- include("../components/foot") %>

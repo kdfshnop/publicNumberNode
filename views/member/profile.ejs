@@ -1,0 +1,28 @@
+<%- include("../components/head") %>
+<div class="information">
+    <div class="photo">
+        <span>头像</span>
+        <img class="pic" src="<%= apiData.profileData && apiData.profileData.pic %>">
+    </div>    
+    <div class="name superfine-border-top-fence relative">
+        <span>姓名</span>
+        <span><%= apiData.profileData && apiData.profileData.name %></span>
+    </div>    
+    <div class="identity superfine-border-top-fence relative">
+        <span>身份证</span>
+        <span><%= apiData.profileData && apiData.profileData.idCard %></span>
+    </div>    
+    <div class="city superfine-border-top-fence relative">
+        <span>城市</span>
+        <span><%= apiData.profileData && apiData.profileData.city %></span>
+    </div>    
+    <div class="dist superfine-border-top-fence relative">
+        <div id="townSelector" data-value="<%= apiData.profileData && apiData.profileData.district.map((item) => {return item.towns.map((i) => {return i.id }).join()}).join() %>">
+            <dl class="horizontal"><dt>服务区域</dt><dd><%= apiData.profileData && apiData.profileData.district.map((item) => {return item.towns.map((i) => {return i.label }).join()}) %></dd></dl>
+            <i class="arrows"></i>
+        </div>
+    </div>
+    <input type="hidden" id="cityId" value="<%= apiData.profileData && apiData.profileData.cityId %>">
+    <%- include("../components/townPicker") %>
+</div>
+<%- include("../components/foot") %>

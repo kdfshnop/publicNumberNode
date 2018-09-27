@@ -1,0 +1,7 @@
+{
+    "status" : 1 ,
+    "message" : "获取手机验证码成功",
+    "data" : {
+        "authCode" : 1234
+    }
+}

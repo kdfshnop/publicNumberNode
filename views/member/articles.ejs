@@ -1,0 +1,23 @@
+<%- include("../components/head") %>
+<div class="relative title" style="text-align : center ;">
+    <a href="/member/article/publish?agentId=<%= params.agentId %>" class="addArticle">+ 新增采集文章</a>
+        <div class="tool">
+            <div class="arrow"></div>
+            <div class="inner">
+                <p>试一试 AI 智能采集文章</p>
+                <p>给你微营销新体验</p>
+            </div>
+        </div>
+</div>
+<%if(!data || !data.length){%>
+    <div class="no-article">
+        <img src="<%= app.appStaticPrefix %>/images/noArticles.png" alt="">
+        <p>暂无记录</p>
+    </div>
+<%}%>
+<div id="list">
+<%if(data && data.length > 0){%>
+    <%- include("../components/articleItem", {data: data}) %>
+<%}%>
+</div>
+<%- include("../components/foot") %>

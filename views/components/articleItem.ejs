@@ -1,0 +1,9 @@
+<% data && data.forEach(function(article){ %>
+    <a href="<%= article.yfykLink %>/yfyk365/wechat/hybrid?agentId=<%= article.agentId %>&openId=<%= article.openId %>&id=<%= article.articleId %>&title=<%= article.shareTitle %>&share=false" class="article-info padding-lr superfine-border-top-fence relative">
+        <div>
+            <p class="info-title"><%= article.shareTitle %></p>
+            <p class="time"> <%= article.currentTime %></p>
+        </div>
+        <img src="<%= article.shareImageUrl %>" alt="">
+    </a>
+<% }) ; %>
